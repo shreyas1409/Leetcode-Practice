@@ -1,0 +1,23 @@
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        s.erase(remove(s.begin(), s.end(), ' '), s.end());
+        for (int i = 0; i < s.size(); ++i) {
+            s[i] = tolower(s[i]);
+            if (!isalnum(s[i])) {
+                s.erase(s.begin() + i);
+                --i;  
+            }
+        }
+        int j = s.size() - 1;
+        for (int i = 0; i < s.size(); ++i) {
+            if (s[i] != s[j]) {
+                return false;
+            }
+            --j;
+        }
+        return true;
+    }
+};
+
+
