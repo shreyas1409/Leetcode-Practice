@@ -1,0 +1,29 @@
+    #include <iostream>
+    #include <string>
+    using namespace std;
+     
+    int main()
+    {
+        int tot = 0;
+        cin >> tot;
+     
+        string x;
+        char ed[3];
+     
+        for (int i = 0; i < tot; i++) {
+            cin >>x;
+     
+            if (x.length() > 10) {
+                cout << x[0];
+                if (((x.length() - 2) / 10) >= 1) {
+                    cout << (x.length() - 2) / 10;
+                }
+                cout << (x.length() - 2) % 10;
+                cout << x[x.length() - 1] << endl;
+            }
+            else {
+                cout << x << endl;
+            }
+        }
+        return 0;
+    }
